@@ -8,9 +8,13 @@ public class MyPhoneBook {
     private PhoneNumber[] phoneNumbers = new PhoneNumber[10];
 
     public void addPhoneNumber(String name, String phone) {
-        PhoneNumber phoneNumber = new PhoneNumber(name, phone);
-        phoneNumbers[index] = phoneNumber;
-        index++;
+        if (index < 10) {
+            PhoneNumber phoneNumber = new PhoneNumber(name, phone);
+            phoneNumbers[index] = phoneNumber;
+            index++;
+        } else {
+            System.out.println("Место в записной книжке закончилось");
+        }
     }
 
     public void printPhoneBook() {
