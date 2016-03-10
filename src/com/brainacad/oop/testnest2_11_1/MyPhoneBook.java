@@ -1,5 +1,8 @@
 package com.brainacad.oop.testnest2_11_1;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 /**
  * Created by m18 on 09.03.2016.
  */
@@ -22,6 +25,35 @@ public class MyPhoneBook {
             if (phoneNumber != null) System.out.println(phoneNumber);
         }
     }
+
+    //Lab 2.11.2:
+    public void sortByName() {
+        Comparator comparatorByName = new Comparator() {
+            @Override
+            public int compare(Object o1, Object o2) {
+                PhoneNumber phoneNumber1 = (PhoneNumber) o1;
+                PhoneNumber phoneNumber2 = (PhoneNumber) o2;
+                return phoneNumber1.getName().compareTo(phoneNumber2.getName());
+//                return phoneNumber1.name.length() - phoneNumber2.name.length();
+            }
+        };
+        Arrays.sort(phoneNumbers, comparatorByName);
+    }
+
+    public void sortByPhoneNumber() {
+        Comparator comparatorByPhoneNumber = new Comparator() {
+            @Override
+            public int compare(Object o1, Object o2) {
+                PhoneNumber phoneNumber1 = (PhoneNumber) o1;
+                PhoneNumber phoneNumber2 = (PhoneNumber) o2;
+                int number1 = Integer.parseInt(phoneNumber1.phone);
+                int number2 = Integer.parseInt(phoneNumber2.phone);
+                return number1 - number2;
+            }
+        };
+        Arrays.sort(phoneNumbers, comparatorByPhoneNumber);
+    }
+
 
     protected static class PhoneNumber {
         private String name;
