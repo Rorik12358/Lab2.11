@@ -27,8 +27,8 @@ public class Main {
         phoneBook1.addPhoneNumber("Simon", "0378132111");
         phoneBook1.addPhoneNumber("Angelina", "0558212252");
 
-//        phoneBook1.sortByName();
-        phoneBook1.sortByPhoneNumber();
-        phoneBook1.printPhoneBook();
+        phoneBook1.sortByName();
+//        phoneBook1.sortByPhoneNumber();
+//        phoneBook1.printPhoneBook();
     }
 }

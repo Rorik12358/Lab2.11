@@ -34,7 +34,6 @@ public class MyPhoneBook {
                 PhoneNumber phoneNumber1 = (PhoneNumber) o1;
                 PhoneNumber phoneNumber2 = (PhoneNumber) o2;
                 return phoneNumber1.getName().compareTo(phoneNumber2.getName());
-//                return phoneNumber1.name.length() - phoneNumber2.name.length();
             }
         };
         Arrays.sort(phoneNumbers, comparatorByName);
